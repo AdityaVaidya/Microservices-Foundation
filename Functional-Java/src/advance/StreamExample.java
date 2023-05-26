@@ -7,11 +7,11 @@ public class StreamExample {
     public static void main(String[] args) {
         // Create a list of employees
         List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("Adi", 26, 30000));
-        employees.add(new Employee("John", 34, 45000));
-        employees.add(new Employee("Rushi", 21, 40000));
-        employees.add(new Employee("Nexus", 28, 35000));
-        employees.add(new Employee("Shiv", 32, 32000));
+        employees.add(new Employee(1,"Adi", 26, 30000));
+        employees.add(new Employee(2,"John", 34, 45000));
+        employees.add(new Employee(3, "Rushi", 21, 40000));
+        employees.add(new Employee(4, "Nexus", 28, 35000));
+        employees.add(new Employee(5, "Shiv", 32, 32000));
 
         // Example using Java Streams
         double averageSalary = employees.stream()
