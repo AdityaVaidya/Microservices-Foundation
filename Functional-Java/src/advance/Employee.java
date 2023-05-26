@@ -1,5 +1,7 @@
 package advance;
 
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 class Employee {
@@ -8,6 +10,8 @@ class Employee {
     private int age;
     private double salary;
     private List<String> skills;
+    private LocalDateTime hireDateTime;
+    private ZonedDateTime currentDateTime;
 
     public Employee(int id, String name, int age, double salary, List<String> skills) {
         this.id = id;
@@ -15,6 +19,12 @@ class Employee {
         this.age = age;
         this.salary = salary;
         this.skills = skills;
+    }
+
+    public Employee(String name, LocalDateTime hireDateTime, ZonedDateTime currentDateTime) {
+        this.name = name;
+        this.hireDateTime = hireDateTime;
+        this.currentDateTime = currentDateTime;
     }
 
     public int getId() {
@@ -55,6 +65,22 @@ class Employee {
 
     public void setSkills(List<String> skills) {
         this.skills = skills;
+    }
+
+    public LocalDateTime getHireDateTime() {
+        return hireDateTime;
+    }
+
+    public void setHireDateTime(LocalDateTime hireDateTime) {
+        this.hireDateTime = hireDateTime;
+    }
+
+    public ZonedDateTime getCurrentDateTime() {
+        return currentDateTime;
+    }
+
+    public void setCurrentDateTime(ZonedDateTime currentDateTime) {
+        this.currentDateTime = currentDateTime;
     }
 
     @Override
