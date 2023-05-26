@@ -1,16 +1,20 @@
 package advance;
 
+import java.util.List;
+
 class Employee {
     private int id;
     private String name;
     private int age;
     private double salary;
+    private List<String> skills;
 
-    public Employee(int id, String name, int age, double salary) {
+    public Employee(int id, String name, int age, double salary, List<String> skills) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.salary = salary;
+        this.skills = skills;
     }
 
     public int getId() {
@@ -45,8 +49,17 @@ class Employee {
         this.salary = salary;
     }
 
+    public List<String> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<String> skills) {
+        this.skills = skills;
+    }
+
     @Override
     public String toString() {
-        return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", salary=" + salary + "]";
+        return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", salary=" + salary + ", skills=" + skills
+                + "]";
     }
 }
