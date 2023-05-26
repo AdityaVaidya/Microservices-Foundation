@@ -1,6 +1,7 @@
 package advance;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,11 +14,11 @@ import java.util.Spliterator;
 public class CollectionAPIExample {
     public static void main(String[] args) {
         List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee(1, "Adi", 26, 30000));
-        employees.add(new Employee(2, "John", 34, 45000));
-        employees.add(new Employee(3, "Rushi", 21, 40000));
-        employees.add(new Employee(4, "Nexus", 28, 35000));
-        employees.add(new Employee(5, "Shiv", 32, 32000));
+        employees.add(new Employee(1, "Adi", 26, 30000, Arrays.asList("Java", "Python")));
+        employees.add(new Employee(2, "John", 34, 45000, Arrays.asList("C", "C++")));
+        employees.add(new Employee(3, "Rushi", 21, 40000, Arrays.asList("Java", "Javascript")));
+        employees.add(new Employee(4, "Nexus", 28, 35000, Arrays.asList("C", "Python")));
+        employees.add(new Employee(5, "Shiv", 32, 32000, Arrays.asList("Java", "C++")));
 
         // forEach - iterate over each element using a consumer
         System.out.println("Iterating over employees using forEach:");
@@ -67,7 +68,7 @@ public class CollectionAPIExample {
             oldValue.setSalary(oldValue.getSalary() + newValue.getSalary());
             return oldValue;
         };
-        Employee newEmployee = new Employee(5, "Appu", 32, 32000);
+        Employee newEmployee = new Employee(5, "Appu", 32, 32000,  Arrays.asList("Java", "C++"));
         employeeMap.merge(newEmployee.getId(), newEmployee, salaryMerger);
         System.out.println("\nEmployees after merging new employee with ID 4:");
         employeeMap.forEach((key, value) -> System.out.println(value));
